@@ -1,0 +1,18 @@
+[
+ {
+  "directory": "/home/Carson/Documents/Raylib-Syncopation",
+  "arguments": [
+   "clang",
+   "-Wall",
+   "-Iinclude",
+   "src/main.c",
+   "src/grooveInfo.c",
+   "src/grooveView.c",
+   "-o",
+   "main",
+   "-lraylib",
+   "-lm"
+  ],
+  "file": "src/grooveView.c"
+ }
+]
