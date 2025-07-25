@@ -3,28 +3,34 @@ SRC = src/main.c src/grooveInfo.c src/grooveView.c src/grooveMetronome.c
 OUT = main
 
 INCLUDE_DIR = -Iinclude
-CFLAGS = -Wall $(INCLUDE_DIR) 
+CFLAGS = -Wall $(INCLUDE_DIR)
 LDFLAGS = -lm
 
-UNAME_S := $(shell uname -s)
-
-ifeq ($(UNAME_S), Linux)
-    # Linux setup
-    CFLAGS += -I/usr/include/raylib
-    LDFLAGS += -lraylib
+ifeq ($(OS),Windows_NT)
+    IS_WINDOWS = 1
 else
-    # Assume Windows
-    CFLAGS += -Iraylib/include
-    LDFLAGS += -Lraylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm -fuse-ld=lld
-    OUT := main.exe
+    IS_WINDOWS = 0
+endif
+
+ifeq ($(IS_WINDOWS), 1)
+    OUT = main.exe
+    RAYLIB_DIR = external/raylib
+    CFLAGS += -I$(RAYLIB_DIR)/include
+    LDFLAGS += -L$(RAYLIB_DIR)/lib -lraylib -lopengl32 -lgdi32 -lwinmm
+    CFLAGS += --target=x86_64-w64-windows-gnu
+    LDFLAGS += --target=x86_64-w64-windows-gnu
+else
+    OUT = main
+    CFLAGS += -I/usr/include/raylib
+    LDFLAGS += -lraylib -lm
 endif
 
 all:
 	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
 
 clean:
-ifeq ($(UNAME_S), Linux)
-	rm -f $(OUT)
-else
+ifeq ($(IS_WINDOWS), 1)
 	del /Q $(OUT)
+else
+	rm -f $(OUT)
 endif
