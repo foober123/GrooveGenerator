@@ -1,6 +1,6 @@
 # GrooveGenerator - Raylib-Based Rhythm Generator for Guitarists
 ![Screenshot](docs/screenshot.png)
-
+[Tech Demo](https://youtu.be/WUvsQRAPjqk)
 
 
 ## Features
