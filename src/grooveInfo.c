@@ -13,7 +13,6 @@ g->isPlaying = false;
 g->includeEighths = false;
 g->includeSixteenths = false;
 
-g->BPM = 120;
 }
 
 void randomizeGroove(grooveInfo *g){

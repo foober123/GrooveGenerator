@@ -7,13 +7,11 @@ void initMetronome(grooveMetronome *m, grooveInfo *g)
 m->Hihat = LoadSound("assets/hihat.wav");
 m->enabled = false;
 m->lastBeatTime = GetTime();
-m->bpm = g->BPM;
+m->bpm = 120;
 }
 
 void updateMetronome(grooveMetronome *m, grooveInfo *g){
 static bool wasPaused = false;
-
-m->bpm = g->BPM;
 
 if(!wasPaused && m->enabled){
 m->lastBeatTime = GetTime();

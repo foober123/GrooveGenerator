@@ -67,18 +67,18 @@ void drawGroovePanel(grooveInfo *g, grooveMetronome *m){
     GuiCheckBox((Rectangle){100,725,20,20}, "16ths", &g->includeSixteenths);
     
     const int bpmBar = 300;
-    int bpmSpacing = MeasureText(TextFormat("%0.f", g->BPM), 20);
+    int bpmSpacing = MeasureText(TextFormat("%0.f", m->bpm), 20);
 
     //BPM BAR
-    DrawText(TextFormat("%.0f", g->BPM), SCREEN_WIDTH/2 - bpmSpacing/2,675,20,BLACK);
-    GuiSliderBar((Rectangle){SCREEN_WIDTH/2 - bpmBar/2,725,bpmBar,20}, "", "", &g->BPM, 40, 400);
+    DrawText(TextFormat("%.0f", m->bpm), SCREEN_WIDTH/2 - bpmSpacing/2,675,20,BLACK);
+    GuiSliderBar((Rectangle){SCREEN_WIDTH/2 - bpmBar/2,725,bpmBar,20}, "", "", &m->bpm, 40, 400);
     if(GuiButton((Rectangle){SCREEN_WIDTH/2 + 40, 675, 20, 20}, "+")){
-        roundf(g->BPM);
-        g->BPM++;
+        m->bpm = roundf(m->bpm);
+        m->bpm++;
     }
     if(GuiButton((Rectangle){SCREEN_WIDTH/2 - 60, 675, 20, 20}, "-")){
-        roundf(g->BPM);
-        g->BPM--;
+        m->bpm = roundf(m->bpm);
+        m->bpm--;
     }
     GuiToggle((Rectangle){SCREEN_WIDTH/2 - 150, 750, 148, 24}, "Play", &m->enabled);
     
