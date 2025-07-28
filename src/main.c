@@ -8,12 +8,12 @@
 #include "grooveInfo.h"
 #include "grooveMetronome.h"
 #include "grooveView.h"
-
+#include "theme.h"
 
 void drawBar();
 
 int main(void){
-
+ SetTargetFPS(60);
  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Groove Trainer");
  InitAudioDevice();
 
@@ -21,14 +21,13 @@ int main(void){
  grooveMetronome metronome;
  initGroove(&groove);
  initMetronome(&metronome, &groove);
- GuiSetStyle(DEFAULT, TEXT_SIZE, 24);
  
 
  while (!WindowShouldClose()) {
      BeginDrawing();
      {
         updateMetronome(&metronome, &groove);
-        ClearBackground(RAYWHITE);
+        ClearBackground(currentTheme[BACKGROUND]);
         drawGroove(&groove, &metronome);
      }
      EndDrawing();

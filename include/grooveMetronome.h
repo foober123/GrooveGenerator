@@ -6,9 +6,12 @@
 
 typedef struct{
 Sound Hihat;
+Sound Snare;
 double lastBeatTime;
 bool enabled;
 float bpm;
+bool enableAccent;
+int beatCount;
 
 } grooveMetronome;
 void initMetronome(grooveMetronome *m, grooveInfo *g);

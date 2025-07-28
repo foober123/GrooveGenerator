@@ -1,18 +1,20 @@
 # GrooveGenerator - Raylib-Based Rhythm Generator for Guitarists
 ![Screenshot](docs/screenshot.png)
-[Tech Demo](https://youtu.be/WUvsQRAPjqk)
+[Tech Demo](https://youtu.be/6No4EbDdkJ8)
 
 
 ## Features
 - Toggleable 8th and 16th notes
 - Metronome synced to BPM
+- Accent Button to play marked steps
+
 
 ## Roadmap
 - [x] 16-step grid for 16th notes in 4/4 time
 - [x] Metronome with sound and BPM control
 - [ ] Presets for Practicing
 - [ ] Save/load user patterns
-- [ ] Colorschemes
+- [?] Colorschemes
 - [ ] Biased Randomization for grooves
 
 ## Credits

@@ -1,5 +1,5 @@
 CC = clang
-SRC = src/main.c src/grooveInfo.c src/grooveView.c src/grooveMetronome.c
+SRC = src/main.c src/grooveInfo.c src/grooveView.c src/grooveMetronome.c src/theme.c
 OUT = main
 
 INCLUDE_DIR = -Iinclude
@@ -16,7 +16,7 @@ ifeq ($(IS_WINDOWS), 1)
     OUT = main.exe
     RAYLIB_DIR = external/raylib
     CFLAGS += -I$(RAYLIB_DIR)/include
-    LDFLAGS += -L$(RAYLIB_DIR)/lib -lraylib -lopengl32 -lgdi32 -lwinmm
+    LDFLAGS += -L$(RAYLIB_DIR)/lib -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
     CFLAGS += --target=x86_64-w64-windows-gnu
     LDFLAGS += --target=x86_64-w64-windows-gnu
 else

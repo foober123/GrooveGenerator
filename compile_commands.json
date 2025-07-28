@@ -1,18 +1,22 @@
 [
  {
-  "directory": "/home/Carson/Documents/Raylib-Syncopation",
+  "directory": "/mnt/syncthing/GrooveGenerator",
   "arguments": [
    "clang",
    "-Wall",
    "-Iinclude",
+   "-I/usr/include/raylib",
    "src/main.c",
    "src/grooveInfo.c",
    "src/grooveView.c",
+   "src/grooveMetronome.c",
+   "src/theme.c",
    "-o",
    "main",
+   "-lm",
    "-lraylib",
    "-lm"
   ],
-  "file": "src/grooveView.c"
+  "file": "src/theme.c"
  }
 ]

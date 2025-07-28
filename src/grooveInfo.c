@@ -9,7 +9,6 @@ for (int i = 0; i < 16; i++) {
 g->steps[i] = false;
 
 }
-g->isPlaying = false;
 g->includeEighths = false;
 g->includeSixteenths = false;
 

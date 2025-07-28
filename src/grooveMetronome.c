@@ -1,3 +1,4 @@
+#include "config.h"
 #include "grooveMetronome.h"
 #include "grooveInfo.h"
 #include <raylib.h>
@@ -5,15 +6,19 @@
 void initMetronome(grooveMetronome *m, grooveInfo *g)
 {
 m->Hihat = LoadSound("assets/hihat.wav");
+m->Snare = LoadSound("assets/snare.wav");
+m->beatCount = 0;
 m->enabled = false;
+m->enableAccent = false;
 m->lastBeatTime = GetTime();
-m->bpm = 120;
+m->bpm = DEFAULT_BPM;
 }
 
 void updateMetronome(grooveMetronome *m, grooveInfo *g){
 static bool wasPaused = false;
 
 if(!wasPaused && m->enabled){
+m->beatCount = 0;
 m->lastBeatTime = GetTime();
 }
 wasPaused = m->enabled;
@@ -23,11 +28,20 @@ return;
 }
 
 double currentTime = GetTime();
-float secondsPerBeat = 60.f / m->bpm;
+float secondsPerStep = 60.f / (4 * m->bpm); 
 
-if(currentTime - m->lastBeatTime >= secondsPerBeat){
-    PlaySound(m->Hihat);
-    m->lastBeatTime += secondsPerBeat;
+if(currentTime - m->lastBeatTime >= secondsPerStep){
+
+    if(m->beatCount % 4 == 0){
+        PlaySound(m->Hihat);
+    }
+
+    if(m->enableAccent && g->steps[m->beatCount]){
+    PlaySound(m->Snare);
+    }
+
+    m->lastBeatTime += secondsPerStep;
+    m->beatCount = (m->beatCount + 1)  % 16;
 }
 
 }

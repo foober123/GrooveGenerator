@@ -5,11 +5,9 @@
 
 typedef struct{
 bool steps[16]; 
-bool isPlaying;
 bool includeEighths;
 bool includeSixteenths;
 
-float BPM;
 } grooveInfo ;
 
 void initGroove(grooveInfo *g);
