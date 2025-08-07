@@ -14,6 +14,8 @@ typedef enum{
     THEMERED,
     THEMEBLUE,
 
+    MUTEDRED,
+
     COLOR_COUNT
 } colorscheme;
 

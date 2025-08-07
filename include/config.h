@@ -9,5 +9,16 @@
 #define CTHEME oneDark
 #define DEFAULT_BPM 80
 
+#define BPM_PRESET_1 120
+#define BPM_PRESET_2 160
+#define BPM_PRESET_3 240
+
+
+#define DEFAULT_HIHAT_VOLUME 1
+#define DEFAULT_SNARE_VOLUME .6
+
+
+
+
 
 #endif

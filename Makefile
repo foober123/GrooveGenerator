@@ -1,5 +1,5 @@
 CC = clang
-SRC = src/main.c src/grooveInfo.c src/grooveView.c src/grooveMetronome.c src/theme.c
+SRC = src/main.c src/grooveInfo.c src/grooveView.c src/grooveMetronome.c src/grooveKeybinds.c src/theme.c
 OUT = main
 
 INCLUDE_DIR = -Iinclude

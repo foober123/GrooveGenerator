@@ -7,6 +7,13 @@ void initMetronome(grooveMetronome *m, grooveInfo *g)
 {
 m->Hihat = LoadSound("assets/hihat.wav");
 m->Snare = LoadSound("assets/snare.wav");
+
+SetSoundVolume(m->Hihat, DEFAULT_HIHAT_VOLUME);
+SetSoundVolume(m->Snare, DEFAULT_SNARE_VOLUME);
+
+m->hihatVolume = DEFAULT_HIHAT_VOLUME;
+m->snareVolume = DEFAULT_SNARE_VOLUME;
+
 m->beatCount = 0;
 m->enabled = false;
 m->enableAccent = false;

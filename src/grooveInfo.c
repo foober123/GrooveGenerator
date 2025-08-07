@@ -5,17 +5,24 @@
 
 void initGroove(grooveInfo *g){
 
-for (int i = 0; i < 16; i++) {
-g->steps[i] = false;
+    for (int i = 0; i < 16; i++) {
+        g->steps[i] = false;
 
-}
-g->includeEighths = false;
-g->includeSixteenths = false;
+    }
+    g->includeEighths = false;
+    g->includeSixteenths = false;
 
 }
 
 void randomizeGroove(grooveInfo *g){
-for(int i = 0; i < 16; i++){
-    g->steps[i] = rand() % 2;
+    for(int i = 0; i < 16; i++){
+        g->steps[i] = rand() % 2;
     }
+}
+
+void clearGroove(grooveInfo * g){
+    for (int i = 0; i < 16; i++) {
+        g->steps[i] = false;
+    }
+
 }

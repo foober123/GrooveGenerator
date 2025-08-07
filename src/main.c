@@ -1,3 +1,4 @@
+#include "grooveKeybinds.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <raylib.h>
@@ -26,6 +27,7 @@ int main(void){
  while (!WindowShouldClose()) {
      BeginDrawing();
      {
+        handleGrooveKeybinds(&groove, &metronome);
         updateMetronome(&metronome, &groove);
         ClearBackground(currentTheme[BACKGROUND]);
         drawGroove(&groove, &metronome);

@@ -8,6 +8,19 @@
 - Metronome synced to BPM
 - Accent Button to play marked steps
 
+## Default Keybinds
+| Key     | Action               |
+|---------|----------------------|
+| `Space` | Play Metronome       |
+| `R_ALT` | Play Accented Beats  |
+| `R`     | Generate Random Beat |
+| `C`     | Clear Beat           |
+| `X`     | Increase BPM         |
+| `A`     | Decrease BPM         |
+| `1`     | Set BPM to DEFAULT   |
+| `2`     | Set BPM to PRESET_1  |
+| `3`     | Set BPM to PRESET_2  |
+| `4`     | Set BPM to PRESET_3  |
 
 ## Roadmap
 - [x] 16-step grid for 16th notes in 4/4 time

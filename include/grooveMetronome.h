@@ -7,6 +7,10 @@
 typedef struct{
 Sound Hihat;
 Sound Snare;
+
+float hihatVolume;
+float snareVolume;
+
 double lastBeatTime;
 bool enabled;
 float bpm;

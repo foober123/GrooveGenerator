@@ -27,3 +27,15 @@
 -Keybinds
 
 ---
+
+## 2025-08-03
+**What Changed**
+- Added Keybinds (Yay)
+- Added 3 BPM presets that are changeable through config.h
+- Added a random beat button but its not biased so expect weird syncopation when you use it
+- Marks now highlight when the cursor hovers over a beat or an offbeat
+- Removed tokyoNight
+![Demo](hovering.gif)
+**Notes**
+- BPM sliding using keys feels slippery at best. Code will probably be fixed later
+- Might Add `oneLight`

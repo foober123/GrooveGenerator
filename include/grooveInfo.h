@@ -12,5 +12,6 @@ bool includeSixteenths;
 
 void initGroove(grooveInfo *g);
 void randomizeGroove(grooveInfo *g);
+void clearGroove(grooveInfo *g);
 
 #endif
