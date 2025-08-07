@@ -30,11 +30,12 @@
 
 ## 2025-08-07
 **What Changed**
+- Removed tokyoNight
 - Added Keybinds (Yay)
 - Added 3 BPM presets that are changeable through config.h
 - Added a random beat button but its not biased so expect weird syncopation when you use it
-- Marks now highlight when the cursor hovers over a beat or an offbeat
-- Removed tokyoNight
+- Marks now highlight when the cursor hovers over a beat or an offbeat: 
+  
 ![Demo](hovering.gif)
 
 **Notes**
