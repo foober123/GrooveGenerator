@@ -3,16 +3,35 @@
 #include "grooveInfo.h"
 #include <raylib.h>
 
+
+void loadAccentSound(grooveMetronome *m){
+switch (ACCENTSOUND){
+    case SNARE:
+        m->Accent = LoadSound("assets/snare.wav");
+        m->accentVolume = DEFAULT_SNARE_VOLUME;
+        break;
+    case KICK:
+        m->Accent = LoadSound("assets/kick.wav");
+        m->accentVolume = DEFAULT_KICK_VOLUME;
+        break;
+    }
+
+
+
+
+
+}
+
+
 void initMetronome(grooveMetronome *m, grooveInfo *g)
 {
 m->Hihat = LoadSound("assets/hihat.wav");
-m->Snare = LoadSound("assets/snare.wav");
+loadAccentSound(m);
 
 SetSoundVolume(m->Hihat, DEFAULT_HIHAT_VOLUME);
-SetSoundVolume(m->Snare, DEFAULT_SNARE_VOLUME);
+SetSoundVolume(m->Accent, DEFAULT_SNARE_VOLUME);
 
 m->hihatVolume = DEFAULT_HIHAT_VOLUME;
-m->snareVolume = DEFAULT_SNARE_VOLUME;
 
 m->beatCount = 0;
 m->enabled = false;
@@ -44,7 +63,7 @@ if(currentTime - m->lastBeatTime >= secondsPerStep){
     }
 
     if(m->enableAccent && g->steps[m->beatCount]){
-    PlaySound(m->Snare);
+    PlaySound(m->Accent);
     }
 
     m->lastBeatTime += secondsPerStep;

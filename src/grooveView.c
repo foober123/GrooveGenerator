@@ -67,10 +67,9 @@ void drawGroovePanel(grooveInfo *g, grooveMetronome *m){
 
     const int bpmBar = 300;
     int bpmSpacing = MeasureText(TextFormat("%0.f", m->bpm), 20);
-
-    //BPM BAR
-    DrawText(TextFormat("%.0f", m->bpm), SCREEN_WIDTH/2 - bpmSpacing/2,675,20,currentTheme[FOREGROUND]);
+    
     GuiSlider((Rectangle){SCREEN_WIDTH/2 - bpmBar/2,725,bpmBar,20}, "", "", &m->bpm, 40, 400);
+    DrawText(TextFormat("%.0f", m->bpm), SCREEN_WIDTH/2 - bpmSpacing/2,675,20,currentTheme[FOREGROUND]);
     if(GuiButton((Rectangle){SCREEN_WIDTH/2 + 40, 675, 20, 20}, "+")){
         m->bpm = roundf(m->bpm);
         m->bpm++;
@@ -149,6 +148,31 @@ void drawGrooveMarks(grooveInfo *g){
     } 
 }
 
+
+void drawGrooveTracer(grooveInfo *g, grooveMetronome *m){
+    bool qtrNotes = m->beatCount == 0 || m->beatCount == 4 || m->beatCount == 8 || m->beatCount == 12; 
+    bool eighthNotes = m->beatCount == 2 || m->beatCount == 6 || m->beatCount == 10 || m->beatCount == 14;
+
+
+    if(SHOWTRACER == false || m->enabled == false){
+    return;
+    }
+    
+
+            if(qtrNotes){
+                DrawText("*", 195 + (m->beatCount * 55), 100, 40, currentTheme[THEMEBLUE]);
+            }    
+
+            if(g->includeEighths && (eighthNotes) ){
+                DrawText("*", 195 + (m->beatCount * 55), 100, 40, currentTheme[THEMEBLUE]);
+            }
+
+            if(g->includeSixteenths && !(qtrNotes || eighthNotes)){
+                DrawText("*", 195 + (m->beatCount * 55), 100, 40, currentTheme[THEMEBLUE]);
+            }
+
+}
+
 void setGrooveStyle(){
     GuiSetStyle(DEFAULT, TEXT_SIZE, 24);
     GuiSetStyle(DEFAULT, TEXT_COLOR_NORMAL, ColorToInt(currentTheme[FOREGROUND]));
@@ -180,4 +204,5 @@ void drawGroove(grooveInfo *g, grooveMetronome *m){
     drawGrooveBar(g);
     drawGroovePanel(g, m);
     drawGrooveMarks(g);
+    drawGrooveTracer(g, m);
 }

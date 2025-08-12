@@ -1,6 +1,4 @@
 #include "grooveKeybinds.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <raylib.h>
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
@@ -11,7 +9,6 @@
 #include "grooveView.h"
 #include "theme.h"
 
-void drawBar();
 
 int main(void){
  SetTargetFPS(60);

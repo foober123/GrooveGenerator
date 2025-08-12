@@ -41,3 +41,19 @@
 **Notes**
 - BPM sliding using keys feels slippery at best. Code will probably be fixed later
 - Might Add `oneLight`
+
+
+## 2025-08-12
+**What Changed**
+- Added `oneLight`
+
+![Demo](oneLight.png)
+
+- Added a switch between `SNARE` and `KICK` in `config.h`
+- Added a Tracer to show which beat the app is currently in
+
+![Demo](tracer.gif)
+
+**Notes**
+- Lots of Technical debt. I'll have to refactor this soon before it becomes a spaghetti project.
+- Tried to change the BPM buttons into a `GuiSpinner()` but decided against it because its a bit hard to use and i need a temp variable because it's `int` only.

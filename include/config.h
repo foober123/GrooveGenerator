@@ -1,6 +1,15 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+
+typedef enum {
+SNARE,
+KICK,
+} accentType;
+
+
+
+
 //I havent tested it out on smaller resolutions. 16:10 aspect ratio is sweet
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 800
@@ -16,9 +25,10 @@
 
 #define DEFAULT_HIHAT_VOLUME 1
 #define DEFAULT_SNARE_VOLUME .6
+#define DEFAULT_KICK_VOLUME .4
 
+#define ACCENTSOUND SNARE
 
-
-
+#define SHOWTRACER true
 
 #endif
