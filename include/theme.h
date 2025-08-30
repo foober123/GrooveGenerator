@@ -19,10 +19,12 @@ typedef enum{
     COLOR_COUNT
 } colorscheme;
 
-extern Color tokyoNight[];
 extern Color lightTheme[];
 extern Color oneDark[];
+extern Color oneLight[];
 
-extern Color *currentTheme;
+
+extern const int THEMECOUNT;
+extern const Color *themeList[];
 
 #endif

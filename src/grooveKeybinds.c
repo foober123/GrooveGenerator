@@ -32,6 +32,7 @@ if (IsKeyDown(KEY_A) && bpmChangeTimer <= 0.0f) {
 
 
 void handleGrooveKeybinds(grooveInfo *g, grooveMetronome *m){
+    
 
 
     if(IsKeyPressed(KEY_ONE)) m->bpm = DEFAULT_BPM;

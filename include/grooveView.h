@@ -4,8 +4,9 @@
 
 #include "grooveInfo.h"
 #include "grooveMetronome.h"
+#include "guiInfo.h"
 
-void drawGroove(grooveInfo *g, grooveMetronome *m);
+void drawGroove(grooveInfo *g, grooveMetronome *m, guiInfo *b);
 
 #endif
 

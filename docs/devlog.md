@@ -57,3 +57,15 @@
 **Notes**
 - Lots of Technical debt. I'll have to refactor this soon before it becomes a spaghetti project.
 - Tried to change the BPM buttons into a `GuiSpinner()` but decided against it because its a bit hard to use and i need a temp variable because it's `int` only.
+
+## 2025-08-30
+**What Changed**
+- Added `guiInfo` struct to deal with settings
+- Added runtime settings. Does not save though. Go to `config.h` if you want your changes to stay
+- Click the gear on the top left corner to change the theme and mix
+
+![Demo](settings.png)
+
+**Notes**
+- Will add snare and kick switching soon enough
+- Need to add a downbeat as well

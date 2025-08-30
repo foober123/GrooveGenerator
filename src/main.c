@@ -7,16 +7,18 @@
 #include "grooveInfo.h"
 #include "grooveMetronome.h"
 #include "grooveView.h"
-#include "theme.h"
-
+#include "guiInfo.h"
 
 int main(void){
  SetTargetFPS(60);
  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Groove Trainer");
  InitAudioDevice();
 
+ guiInfo gui; 
  grooveInfo groove;
  grooveMetronome metronome;
+
+ initDefaultGUI(&gui);
  initGroove(&groove);
  initMetronome(&metronome, &groove);
  
@@ -26,8 +28,7 @@ int main(void){
      {
         handleGrooveKeybinds(&groove, &metronome);
         updateMetronome(&metronome, &groove);
-        ClearBackground(currentTheme[BACKGROUND]);
-        drawGroove(&groove, &metronome);
+        drawGroove(&groove, &metronome, &gui);
      }
      EndDrawing();
  

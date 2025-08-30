@@ -6,10 +6,15 @@
 
 typedef struct{
 Sound Hihat;
-Sound Accent;
+Sound Snare;
+Sound Kick;
 
+int currentAccent;
+
+float masterVolume;
 float hihatVolume;
-float accentVolume;
+float snareVolume;
+float kickVolume;
 
 double lastBeatTime;
 bool enabled;
